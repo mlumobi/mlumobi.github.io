@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changer</title>
+    <link rel="stylesheet" href="color_changer.css">
+    <style>
+        a {
+            display: inline-block;
+            width: 8rem;
+            height: 1.5rem;
+            line-height: 1.5rem;
+            text-align: center;
+            background-color: black;
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="../index.html">主页</a>
+    <a href="color_changer.html">英文</a>
+    <div class="control">
+        <input type="text" id="submitColor">
+        <div class="button unselectable" onclick="submitColor()">上传颜色</div>
+        <div class="button unselectable" onclick="changeColor()">更换颜色</div>
+        <div class="button unselectable" onclick="deleteColor()">删除颜色</div>
+        <div id="colorName"></div>
+    </div>
+
+</body>
+<script src="color_changer.js"></script>
+
+</html>

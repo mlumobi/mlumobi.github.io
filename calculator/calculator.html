@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Calculator</title>
+    <link rel="shortcut icon" href="img/09_Calculator-512.png" type="image/x-icon">
+    <link rel="stylesheet" href="calculator.css">
+    <style>
+        a {
+            display: inline-block;
+            width: 8rem;
+            height: 1.5rem;
+            line-height: 1.5rem;
+            text-align: center;
+            background-color: black;
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="../index.html">Home</a>
+    <div class="display-box">
+        <div class="display" id="display">0</div>
+        <div class="keyClear" id="keyClear" onclick="pressKeyClear()">C</div>
+    </div>
+
+    <div class="keyboard">
+        <div class="key color" id="keyPi" onclick="pressKeyPi()">π</div>
+        <div class="key color" id="keyEE" onclick="pressKey('EE')">EE</div>
+        <div class="key color keyTrig" id="keyTrig" onclick="pressKeyTrig('sin')">sin</div>
+        <div class="key color keyTrig" id="keyTrig" onclick="pressKeyTrig('cos')">cos</div>
+        <div class="key color keyTrig" id="keyTrig" onclick="pressKeyTrig('tan')">tan</div>
+        <div class="key color keyTrig" id="keyTrig" onclick="pressKeyTrig('asin')">asin</div>
+        <div class="key color keyTrig" id="keyTrig" onclick="pressKeyTrig('acos')">acos</div>
+        <div class="key color keyTrig" id="keyTrig" onclick="pressKeyTrig('atan')">atan</div>
+        <div class="key" id="key1" onclick="pressNum(1)">1</div>
+        <div class="key" id="key2" onclick="pressNum(2)">2</div>
+        <div class="key" id="key3" onclick="pressNum(3)">3</div>
+        <div class="key color" id="keyPlus" onclick="pressKey('+')">+</div>
+
+        <div class="key" id="key4" onclick="pressNum(4)">4</div>
+        <div class="key" id="key5" onclick="pressNum(5)">5</div>
+        <div class="key" id="key6" onclick="pressNum(6)">6</div>
+        <div class="key color" id="keyMinus" onclick="pressKey('-')">-</div>
+
+        <div class="key" id="key7" onclick="pressNum(7)">7</div>
+        <div class="key" id="key8" onclick="pressNum(8)">8</div>
+        <div class="key" id="key9" onclick="pressNum(9)">9</div>
+        <div class="key color" id="keyTimes" onclick="pressKey('*')">×</div>
+
+        <div class="key color" id="keyEqual" onclick="pressKeyEqual()">=</div>
+        <div class="key" id="key0" onclick="pressNum(0)">0</div>
+        <div class="key" id="keyDecimal" onclick="pressKeyDecimal()">.</div>
+        <div class="key color" id="keyDivide" onclick="pressKey('/')">÷</div>
+
+
+    </div>
+</body>
+<script src="calculator.js"></script>
+
+</html>

@@ -1,0 +1,31 @@
+body {
+    background-color: teal;
+    color: white;
+    font-family: Georgia;
+    font-size: 20px;
+}
+.core {
+    margin-left: 50px;
+    margin-top: 50px;
+}
+input {
+    font-size:20px;
+    width: 2.3em;
+    margin-right: 3px;
+    background-color: teal;
+    border: white solid 3px;
+    color: white;
+    outline: none;
+}
+#sigma {
+    font-size:4em;
+}
+#formula {
+    font-size: 1.5em;
+}
+#sequence, #series {
+    padding: 10px;
+    width: 80vw;
+    border: white solid 3px;
+    border-radius: 10px;
+}

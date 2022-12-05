@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci</title>
+    <link rel="stylesheet" href="fibonacci.css">
+    <link rel="shortcut icon" href="img/fibonacci_icon.png" type="image/x-icon">
+    <style>
+        a {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 8rem;
+            height: 1.5rem;
+            line-height: 1.5rem;
+            text-align: center;
+            background-color: black;
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="../index.html">Home</a>
+    <div class="container">
+        <h1>Fibonacci</h1>
+        <input type="text" id="fib-length" value="" placeholder="MAX 1477" oninput="updateWebpage();">
+        <h3>Facts</h3>
+        <div id="fact" class="box" onclick="displayFact()"></div>
+        <h3>Golden Ratio</h3>
+        <div id="golden-ratio" class="box"></div>
+        <h3>Sequence</h3>
+        <div id="sequence" class="box"></div>
+    </div>
+</body>
+<script src="fibonacci.js"></script>
+
+</html>

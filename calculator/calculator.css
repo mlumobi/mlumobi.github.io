@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+    font-weight: normal;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(img/wood-wallpaper-desktop-2048x1368-for-macbook.jpg);
+}
+
+.display-box {
+    position: relative;
+    margin: 30px auto;
+    width: 90vw;
+    height: 90px;
+    padding: 15px;
+    padding-left: 50px;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    font-size: 60px;
+    line-height: 50px;
+    text-align: right;
+    overflow: hidden;
+    border: black 5px solid;
+    box-shadow: 5px 5px 20px -8px #000000;
+}
+
+.keyboard {
+    margin: 15px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 330px;
+    /* height: 470px; */
+    background-color: white;
+    border-radius: 10px;
+    border: black 5px solid;
+    box-shadow: 5px 5px 20px -8px #000000;
+}
+.key {
+   margin: 8px;
+    width: 61px;
+    height: 61px;
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    line-height: 64px;
+    text-align: center;
+    font-size: 40px;
+    /* unselectable */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.color{
+    background-color: darkorange;
+}
+.keyboard .color:active{
+    background-color: rgb(255, 191, 113);
+}
+
+.key:active {
+    background-color: rgb(116, 116, 116);
+    box-shadow: inset 3px 5px 5px 0px rgba(0,0,0,0.75);
+}
+
+.keyClear {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    width: 35px;
+    height: 80px;
+    line-height: 80px;
+    font-size: 0.5em;
+    color: white;
+    text-align: center;
+    background-color: darkorange;
+    /* unselectable */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.keyClear:active{
+    background-color: rgb(255, 191, 113);
+    box-shadow: inset 3px 5px 5px 0px rgba(0,0,0,0.75);
+}
+
+.keyTrig,
+#keyEE {
+    font-size: 1.5em;
+}
