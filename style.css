@@ -13,16 +13,17 @@ body {
 }
 
 .container {
-    width: 70vw;
-    height: 100vh;
-    margin: 50px auto;
+    width: auto;
+    height: auto;
+    margin: 10vw 10vw ;
 }
 a {
-    margin: 0.2rem;
+    font-size: 1.3rem;
+    margin: 0.3rem;
     display: inline-block;
-    width: 8rem;
-    height: 1.5rem;
-    line-height: 1.5rem;
+    width: 10rem;
+    height: 3rem;
+    line-height: 3rem;
     text-align: center;
     background-color: black;
     color: white;
