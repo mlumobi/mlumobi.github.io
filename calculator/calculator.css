@@ -1,9 +1,13 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: Arial;
+    font-family: Roboto;
     font-weight: normal;
     box-sizing: border-box;
+}
+@font-face{
+    font-family: 'digital-7';
+    src: url('Digital7-rg1mL.ttf');
 }
 
 body {
