@@ -11,7 +11,7 @@ function Snake() {
             let pos = this.tail[i];
             let d = dist(this.x, this.y, pos.x, pos.y)
             if (d < 1){
-                alert('statover');
+                alert('Game Over');
                 this.total = 0;
                 this.tail = [];
             }
