@@ -195,3 +195,28 @@ input:checked + .slider {
 input:checked + .slider:before {
   transform: translateX(26px);
 }
+
+/* ...existing code... */
+.portrait-warning {
+  display: none; /* Initially hidden */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #333333;
+  color: #ffffff;
+  padding: 40px; /* Increase padding */
+  border-radius: 8px;
+  text-align: center;
+  z-index: 1000; /* Ensure it appears above other elements */
+  font-size: 1.5rem; /* Increase font size */
+  width: 60vw; /* Set width to 80% of the viewport width */
+}
+@media only screen and (orientation: portrait) {
+  .portrait-warning {
+    display: block; /* Show warning in portrait mode */
+  }
+  .scoreboard-container, .buttons, .settings, .language-switcher {
+    display: none; /* Hide other elements in portrait mode */
+  }
+}

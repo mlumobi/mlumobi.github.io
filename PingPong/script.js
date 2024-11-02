@@ -174,6 +174,19 @@ function toggleLanguage() {
   }
   
   updateDeuceMessage();
+  updatePortraitWarning();
+}
+
+function updatePortraitWarning() {
+  const enWarning = document.querySelector('.en-warning');
+  const zhWarning = document.querySelector('.zh-warning');
+  if (currentLanguage === 'en') {
+    enWarning.style.display = 'block';
+    zhWarning.style.display = 'none';
+  } else {
+    enWarning.style.display = 'none';
+    zhWarning.style.display = 'block';
+  }
 }
 
 function updateDeuceMessage() {
@@ -206,4 +219,5 @@ window.onload = function() {
   document.getElementById('darkModeToggle').checked = false; // Ensure toggle is unchecked
   const darkModeButton = document.querySelector('.language-switcher button:nth-child(2)');
   darkModeButton.textContent = 'Dark Mode'; // Set initial button text
+  updatePortraitWarning(); // Set initial portrait warning text
 };
