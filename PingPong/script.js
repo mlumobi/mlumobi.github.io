@@ -157,13 +157,14 @@ const translations = {
 };
 
 function toggleLanguage() {
-  currentLanguage = currentLanguage === 'en' ? 'zh' : 'en';
+  const languageButton = document.querySelector('.language-switcher button');
+  currentLanguage = languageButton.textContent === '中文' ? 'zh' : 'en';
   document.querySelector('h1').textContent = translations[currentLanguage].title;
   document.querySelector('#player1 .player-title').textContent = translations[currentLanguage].player1;
   document.querySelector('#player2 .player-title').textContent = translations[currentLanguage].player2;
   document.querySelector('.buttons button').textContent = translations[currentLanguage].resetGame;
   document.querySelector('.winning-points label').textContent = translations[currentLanguage].winningPoints;
-  document.querySelector('.language-switcher button').textContent = currentLanguage === 'en' ? '中文' : 'English';
+  languageButton.textContent = currentLanguage === 'en' ? '中文' : 'English';
   updateDeuceMessage();
 }
 
@@ -187,6 +188,7 @@ window.onload = function() {
   serveTurn = 1; // Default to Player 1
   serveCount = 1; // Start serve count with 1
   updateServeIndicator();
-  toggleLanguage(); // Set default language to English
-  document.getElementById('darkModeToggle').checked = document.body.classList.contains('dark-mode');
+  document.body.classList.add('light-mode'); // Set default to light mode
+  document.body.classList.remove('dark-mode'); // Remove dark mode
+  document.getElementById('darkModeToggle').checked = false; // Ensure toggle is unchecked
 };
