@@ -28,6 +28,7 @@ a {
     background-color: black;
     color: white;
     text-decoration: none;
+    border-radius: 1.5rem; /* Make buttons round */
 }
 
 @font-face {
