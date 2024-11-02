@@ -5,20 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mobi's Ping Pong Scorer</title>
   <style>
-    @font-face {
-      font-family: 'Smiley Sans';
-      src: url('fonts/SmileySans-Regular.woff2') format('woff2'),
-           url('fonts/SmileySans-Regular.woff') format('woff');
-      font-weight: 400;
-    }
-    @font-face {
-      font-family: 'Smiley Sans';
-      src: url('fonts/SmileySans-Bold.woff2') format('woff2'),
-           url('fonts/SmileySans-Bold.woff') format('woff');
-      font-weight: 700;
-    }
     body {
-      font-family: 'Smiley Sans', Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -91,7 +79,7 @@
       border: 2px solid black; /* Black border */
       padding: 10px 20px; /* Add padding */
       font-size: 16px; /* Increase font size */
-      font-family: 'Smiley Sans', Arial, sans-serif; /* Use Smiley Sans font */
+      font-family: 'Arial', sans-serif; /* Use Arial font */
       border-radius: 5px; /* Rounded corners */
       cursor: pointer; /* Pointer cursor on hover */
       transition: background-color 0.3s, color 0.3s; /* Smooth transition */
@@ -139,7 +127,7 @@
     let score1 = 0;
     let score2 = 0;
     let serveTurn = 1;
-    let serveCount = 0;
+    let serveCount = 1; // Start serve count with 1
     let winningPoints = 7;
     let isDeuce = false; // Track if the game is in deuce
     const winInfo = document.getElementById('win-info');
@@ -240,7 +228,7 @@
     function resetGame() {
       score1 = 0;
       score2 = 0;
-      serveCount = 0;
+      serveCount = 1; // Start serve count with 1
       isDeuce = false; // Reset deuce state
       winInfo.textContent = "";
       serveTurn = 1; // Reset to Player 1 as initial server
@@ -271,6 +259,7 @@
     // Initialize the serve indicator when the page loads
     window.onload = function() {
       serveTurn = 1; // Default to Player 1
+      serveCount = 1; // Start serve count with 1
       updateServeIndicator();
     };
   </script>
