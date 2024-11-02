@@ -209,6 +209,30 @@ function toggleDarkMode() {
   }
 }
 
+function isMobileDevice() {
+  return /Mobi|Android/i.test(navigator.userAgent);
+}
+
+function checkOrientation() {
+  const portraitWarning = document.querySelector('.portrait-warning');
+  if (isMobileDevice() && window.innerHeight > window.innerWidth) {
+    portraitWarning.style.display = 'block';
+    document.querySelector('.scoreboard-container').style.display = 'none';
+    document.querySelector('.buttons').style.display = 'none';
+    document.querySelector('.settings').style.display = 'none';
+    document.querySelector('.language-switcher').style.display = 'none';
+  } else {
+    portraitWarning.style.display = 'none';
+    document.querySelector('.scoreboard-container').style.display = 'flex';
+    document.querySelector('.buttons').style.display = 'flex';
+    document.querySelector('.settings').style.display = 'block';
+    document.querySelector('.language-switcher').style.display = 'flex';
+  }
+}
+
+window.addEventListener('resize', checkOrientation);
+window.addEventListener('load', checkOrientation);
+
 // Initialize the language to English and set the correct dark mode button text
 window.onload = function() {
   serveTurn = 1; // Default to Player 1

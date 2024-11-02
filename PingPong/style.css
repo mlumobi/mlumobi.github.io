@@ -73,7 +73,7 @@ h1 {
   position: absolute; /* Position absolutely within the container */
   font-size: 20px; /* Increase font size for Deuce */
   font-weight: bold; /* Make Deuce bold */
-  background-color: #333333; /* Dark background color for Deuce */
+  background-color: #121212; /* Dark background color for Deuce */
   color: #e0e0e0; /* Light color for Deuce text */
   padding: 10px; /* Padding around the text */
   border-radius: 8px; /* Rounded corners */
@@ -83,6 +83,10 @@ h1 {
 }
 .deuce-message.active {
   display: block; /* Show when active */
+}
+body.dark-mode .deuce-message {
+  background-color: #ffffff; /* White background for Deuce in dark mode */
+  color: #000000; /* Black text for Deuce in dark mode */
 }
 .buttons {
   margin-top: 20px;
@@ -211,12 +215,4 @@ input:checked + .slider:before {
   z-index: 1000; /* Ensure it appears above other elements */
   font-size: 1.5rem; /* Increase font size */
   width: 60vw; /* Set width to 80% of the viewport width */
-}
-@media only screen and (orientation: portrait) {
-  .portrait-warning {
-    display: block; /* Show warning in portrait mode */
-  }
-  .scoreboard-container, .buttons, .settings, .language-switcher {
-    display: none; /* Hide other elements in portrait mode */
-  }
 }
