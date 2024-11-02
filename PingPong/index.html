@@ -26,6 +26,10 @@
     .player {
       text-align: center;
     }
+    .player-title {
+      cursor: pointer; /* Indicate that the title is clickable */
+      font-weight: bold; /* Make player title bold */
+    }
     .player-score {
       font-size: 72px; /* Increase font size */
       width: 100px; /* Fixed width for square */
@@ -34,12 +38,10 @@
       padding: 10px;
       border: 3px solid black; /* Black border for score */
       border-radius: 8px;
-      cursor: pointer; /* Indicate that the score is clickable */
-      user-select: none; /* Prevent text selection */
       display: flex; /* Use flex to center text */
       justify-content: center; /* Center text horizontally */
       align-items: center; /* Center text vertically */
-      font-weight: bold; /* Make font bold for better visibility */
+      user-select: none; /* Prevent text selection */
     }
     .serving {
       border-color: #007bff; /* Blue serving indicator */
@@ -57,10 +59,6 @@
     .info {
       margin-top: 20px;
       font-size: 18px;
-    }
-    .initial-server {
-      margin-top: 10px;
-      text-align: center;
     }
     .settings {
       margin-top: 40px; /* Space above settings */
@@ -82,11 +80,11 @@
   <!-- Scoreboard -->
   <div class="scoreboard">
     <div class="player" id="player1">
-      <h2>Player 1</h2>
+      <h2 class="player-title" onclick="changeInitialServer(1)">Player 1</h2>
       <div class="player-score" id="score1" onclick="addPoint(1)">0</div>
     </div>
     <div class="player" id="player2">
-      <h2>Player 2</h2>
+      <h2 class="player-title" onclick="changeInitialServer(2)">Player 2</h2>
       <div class="player-score" id="score2" onclick="addPoint(2)">0</div>
     </div>
   </div>
@@ -103,18 +101,8 @@
   <div class="settings">
     <div class="winning-points">
       <label for="winning-points">Set Winning Points:</label>
-      <input type="number" id="winning-points" min="1" value="11">
-      <button onclick="setWinningPoints(7)">7</button>
-      <button onclick="setWinningPoints(11)">11</button>
-    </div>
-
-    <!-- Initial Server Selection using Radio Buttons -->
-    <div class="initial-server">
-      <span>Set Initial Server:</span><br>
-      <input type="radio" id="server1" name="initial-server" value="1" checked>
-      <label for="server1">Player 1</label><br>
-      <input type="radio" id="server2" name="initial-server" value="2">
-      <label for="server2">Player 2</label>
+      <input type="range" id="winning-points" min="1" max="21" value="11" step="1" oninput="updateWinningPointsLabel(this.value)">
+      <span id="winning-points-label">11</span>
     </div>
   </div>
 
@@ -128,27 +116,26 @@
     const winInfo = document.getElementById('win-info');
     let gameActive = true; // Track if the game is active
 
+    // Update winning points label when slider value changes
+    function updateWinningPointsLabel(value) {
+      document.getElementById('winning-points-label').textContent = value;
+      winningPoints = parseInt(value);
+      resetGame();
+    }
+
     // Set winning points based on user input
     document.getElementById('winning-points').addEventListener('change', function() {
       winningPoints = parseInt(this.value);
       resetGame();
     });
 
-    // Set winning points to preset values
-    function setWinningPoints(points) {
-      document.getElementById('winning-points').value = points;
-      winningPoints = points;
-      resetGame();
-    }
-
-    // Set initial server based on radio button selection
-    document.querySelectorAll('input[name="initial-server"]').forEach((radio) => {
-      radio.addEventListener('change', function() {
-        serveTurn = parseInt(this.value);
+    // Change the initial server when player title is clicked
+    function changeInitialServer(player) {
+      if (score1 === 0 && score2 === 0) {
+        serveTurn = player;
         updateServeIndicator();
-        resetGame();
-      });
-    });
+      }
+    }
 
     function addPoint(player) {
       if (!gameActive) return; // Prevent adding points if game is over
@@ -176,10 +163,7 @@
         serveCount = 0;
       } else if (isDeuce) {
         winInfo.textContent = "Deuce"; // Keep deuce displayed
-        if (serveCount >= 2) { // Switch serve every 2 points before deuce
-          serveTurn = serveTurn === 1 ? 2 : 1;
-          serveCount = 0;
-        }
+        serveTurn = totalPoints % 2 === 0 ? 1 : 2; // Switch serve every 1 point in deuce
       } else {
         winInfo.textContent = ""; // Clear deuce message
         if (serveCount >= 2) { // Switch serve every 2 points before deuce
@@ -230,7 +214,7 @@
       serveCount = 0;
       isDeuce = false; // Reset deuce state
       winInfo.textContent = "";
-      serveTurn = parseInt(document.querySelector('input[name="initial-server"]:checked').value); // Set initial server
+      serveTurn = 1; // Reset to Player 1 as initial server
       updateScores();
       updateServeIndicator();
 
