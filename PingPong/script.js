@@ -165,6 +165,14 @@ function toggleLanguage() {
   document.querySelector('.buttons button').textContent = translations[currentLanguage].resetGame;
   document.querySelector('.winning-points label').textContent = translations[currentLanguage].winningPoints;
   languageButton.textContent = currentLanguage === 'en' ? '中文' : 'English';
+  
+  const darkModeButton = document.querySelector('.language-switcher button:nth-child(2)');
+  if (document.body.classList.contains('dark-mode')) {
+    darkModeButton.textContent = currentLanguage === 'en' ? 'Light Mode' : '关闭深色模式';
+  } else {
+    darkModeButton.textContent = currentLanguage === 'en' ? 'Dark Mode' : '深色模式';
+  }
+  
   updateDeuceMessage();
 }
 
@@ -180,10 +188,15 @@ function updateDeuceMessage() {
 function toggleDarkMode() {
   document.body.classList.toggle('dark-mode');
   document.body.classList.toggle('light-mode');
-  document.getElementById('darkModeToggle').checked = document.body.classList.contains('dark-mode');
+  const darkModeButton = document.querySelector('.language-switcher button:nth-child(2)');
+  if (document.body.classList.contains('dark-mode')) {
+    darkModeButton.textContent = currentLanguage === 'en' ? 'Light Mode' : '关闭深色模式';
+  } else {
+    darkModeButton.textContent = currentLanguage === 'en' ? 'Dark Mode' : '深色模式';
+  }
 }
 
-// Initialize the language to English
+// Initialize the language to English and set the correct dark mode button text
 window.onload = function() {
   serveTurn = 1; // Default to Player 1
   serveCount = 1; // Start serve count with 1
@@ -191,4 +204,6 @@ window.onload = function() {
   document.body.classList.add('light-mode'); // Set default to light mode
   document.body.classList.remove('dark-mode'); // Remove dark mode
   document.getElementById('darkModeToggle').checked = false; // Ensure toggle is unchecked
+  const darkModeButton = document.querySelector('.language-switcher button:nth-child(2)');
+  darkModeButton.textContent = 'Dark Mode'; // Set initial button text
 };
