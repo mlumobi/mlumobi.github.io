@@ -4,13 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404</title>
+    <title>404 - Page Not Found</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .title {
+            font-size: 5em;
+        }
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .error-message {
+            font-size: 2em;
+            margin-top: 20px;
+        }
+        .home-link {
+            display: block;
+            margin-top: 30px;
+            font-size: 1.5em;
+            color: #007BFF;
+            text-decoration: none;
+        }
+        .home-link:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>404 Not Found</h1>
-    <p>This page does not exist or another error occured.</p>
-    <a href="index.html">Home</a>
+    <div class="container">
+        <h1 class="title">404</h1>
+        <p class="error-message">This page does not exist or another error occurred.</p>
+        <a class="home-link" href="index.html">Go to Home Page</a>
+    </div>
 </body>
 
 </html>
