@@ -1,0 +1,79 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #282c34;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+a {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+}
+
+.container {
+    text-align: center;
+}
+
+#dpad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#dpad button {
+    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#dpad div {
+    display: flex;
+    justify-content: center;
+}
+
+#game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+#score {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+#speed-control {
+    margin-top: 10px;
+}
+
+#speed-control button {
+    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #aaa;
+}

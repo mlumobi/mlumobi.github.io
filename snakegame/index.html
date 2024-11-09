@@ -4,30 +4,39 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Snake Game</title>
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <a href="../index.html">Home</a>
-        <div>
+        <div class="container">
             <h1>Snake Game</h1>
+            <div id="canvas-container">
+                <!-- Canvas will be created here by p5.js -->
+            </div>
+            <div id="score">Score: 0</div>
+            <div id="dpad">
+                <button id="up">Up</button>
+                <div>
+                    <button id="left">Left</button>
+                    <button id="down">Down</button>
+                    <button id="right">Right</button>
+                </div>
+            </div>
+            <div id="speed-control">
+                <button id="speed-up">Speed Up</button>
+                <button id="speed-down">Slow Down</button>
+            </div>
+            <div id="game-over" class="hidden">
+                <p>Game Over</p>
+                <button id="restart">Restart</button>
+            </div>
+            <footer>
+                <p>Created with the help of Copilot GPT-4</p>
+            </footer>
+        </div>
         <script src="../p5/p5.js"></script>
         <script src="script.js"></script>
         <script src="snake.js"></script>
-        </div>
     </body>
-
-    <style>
-        a {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 8rem;
-            height: 1.5rem;
-            line-height: 1.5rem;
-            text-align: center;
-            background-color: black;
-            color: white;
-            text-decoration: none;
-        }
-    </style>
 </html>
