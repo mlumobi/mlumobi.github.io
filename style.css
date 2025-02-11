@@ -6,6 +6,12 @@
 }
 body {
     font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #ffffff;
 }
 
 .title {
@@ -33,6 +39,30 @@ a {
 
 a:hover {
     text-decoration: none;
+}
+
+.dark-mode a {
+    background-color: #ffffff;
+    color: #1a1a1a;
+}
+
+.dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+    background-color: black;
+    color: white;
+}
+
+.dark-mode .dark-mode-toggle {
+    background-color: #ffffff;
+    color: #1a1a1a;
 }
 
 @font-face {
