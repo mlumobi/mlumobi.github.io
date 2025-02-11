@@ -31,6 +31,10 @@ a {
     border-radius: 1.5rem; /* Make buttons round */
 }
 
+a:hover {
+    text-decoration: none;
+}
+
 @font-face {
     font-family: SmileySans;
     src: url("fonts/SmileySans-Oblique.ttf") /* TTF file for CSS3 browsers */
