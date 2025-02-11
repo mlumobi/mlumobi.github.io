@@ -1,17 +1,24 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: Roboto;
+    font-family: Arial;
     font-weight: normal;
     box-sizing: border-box;
 }
-@font-face{
-    font-family: 'digital-7';
-    src: url('Digital7-rg1mL.ttf');
-}
 
+a {
+    display: inline-block;
+    width: 8rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+}
 body {
     background-image: url(img/wood-wallpaper-desktop-2048x1368-for-macbook.jpg);
+    /* Retain existing background image and add font-family */
 }
 
 .display-box {
@@ -106,4 +113,14 @@ body {
 .keyTrig,
 #keyEE {
     font-size: 1.5em;
+}
+
+@font-face {
+    font-family: 'Digital-7';
+    src: url('digital-7.ttf') format('truetype');
+}
+
+#display {
+    font-family: 'Digital-7', monospace, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-variant-numeric: tabular-nums;
 }
